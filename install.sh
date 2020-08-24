@@ -1,5 +1,5 @@
 #!/bin/zsh
-repo_root=https://raw.githubusercontent.com/jrowlingson/ember-brew/master/
+repo_root=https://raw.githubusercontent.com/jrowlingson/ember-bench/master/
 
 # install ember-bench command
 sudo curl -o /usr/local/bin/ember-bench ${repo_root}ember-bench
