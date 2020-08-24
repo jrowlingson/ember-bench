@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+source /usr/local/lib/ember-bench/bench.zsh
+source /usr/local/lib/ember-bench/print_env.zsh
+
+version='0.0.1'
+
+zparseopts -D -E -F -- v=version_flag -version=version_flag || exit 1
+
+if [[ ${#version_flag} -gt 0  ]]; then
+	print $version
+	exit 0
+fi
+
+print "======================"
+print " ember bench ($version)"
+print "======================"
+
+print_env
+
+bench '1.a' 'ember --version'
+bench '2.a' 'ember b' 3 '' 'rm -rf node_modules dist && yarn'
+bench '2.b' 'ember b' 5 'ember b'
