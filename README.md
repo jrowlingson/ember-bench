@@ -2,6 +2,15 @@
 
 A simple tool for benchmarking various ember-cli commands.
 
+## Prerequisites
+
+You will need the following things properly installed on your computer.
+
+* [Git](https://git-scm.com/)
+* [Yarn](https://classic.yarnpkg.com/en/) (with npm)
+* [Node.js](https://nodejs.org/) (with npm)
+* [Ember CLI](https://ember-cli.com/)
+
 ### Installation
 
 ```sh
@@ -68,3 +77,8 @@ mem: 16313584kB
 
 * Version info
 `--version` or `-v`
+
+
+### Notes
+
+This tool currently assumes the usage of `yarn`.
