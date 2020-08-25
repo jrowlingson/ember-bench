@@ -5,7 +5,7 @@ source /usr/local/lib/ember-bench/print_env.zsh
 
 version='0.0.1'
 
-zparseopts -D -E -F -- v=version_flag -version=version_flag || exit 1
+zparseopts -D -E -- v=version_flag -version=version_flag || exit 1
 
 if [[ ${#version_flag} -gt 0  ]]; then
 	print $version
