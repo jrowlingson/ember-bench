@@ -2,6 +2,7 @@
 
 source /usr/local/lib/ember-bench/bench.zsh
 source /usr/local/lib/ember-bench/print_env.zsh
+source /usr/local/lib/ember-bench/handle_options.zsh
 
 version='0.0.1'
 
@@ -10,20 +11,7 @@ zparseopts -D -E -- \
   n=use_npm_flag -npm=use_npm_flag \
   h=help_flag -help=help_flag || exit 1
 
-if [[ ${#version_flag} -gt 0  ]]; then
-	print $version
-	exit 0
-fi
-
-if [[ ${#help_flag} -gt 0  ]]; then
-  print 'Usage: ember-bench'
-  exit 0
-fi
-
-opts_pkg_man='yarn'
-if [[ ${#use_npm_flag} -gt 0  ]]; then
-  opts_pkg_man='npm'
-fi
+handle_options
 
 print "======================"
 print " ember bench ($version)"
