@@ -1,4 +1,10 @@
 function print_env() {
+  RED="\033[1;31m"
+  # GREEN="\033[1;32m"
+  NOCOLOR="\033[0m"
+  if [ ! -f ./.ember-cli ]; then
+    print "${RED}You have to be inside of an ember-cli project to run this command.${NOCOLOR}"
+  fi
   print ""
   print "git repo: `basename $(git rev-parse --show-toplevel HEAD)`"
   print "git branch: `git rev-parse --abbrev-ref HEAD`"
