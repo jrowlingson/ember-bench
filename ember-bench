@@ -5,11 +5,24 @@ source /usr/local/lib/ember-bench/print_env.zsh
 
 version='0.0.1'
 
-zparseopts -D -E -- v=version_flag -version=version_flag || exit 1
+zparseopts -D -E -- \
+  v=version_flag -version=version_flag \
+  n=use_npm_flag -npm=use_npm_flag \
+  h=help_flag -help=help_flag || exit 1
 
 if [[ ${#version_flag} -gt 0  ]]; then
 	print $version
 	exit 0
+fi
+
+if [[ ${#help_flag} -gt 0  ]]; then
+  print 'Usage: ember-bench'
+  exit 0
+fi
+
+opts_pkg_man='yarn'
+if [[ ${#use_npm_flag} -gt 0  ]]; then
+  opts_pkg_man='npm'
 fi
 
 print "======================"
@@ -19,5 +32,5 @@ print "======================"
 print_env
 
 bench '1.a' 'ember --version'
-bench '2.a' 'ember b' 3 '' 'rm -rf node_modules dist && yarn'
+bench '2.a' 'ember b' 3 '' "rm -rf node_modules dist && $opts_pkg_man install"
 bench '2.b' 'ember b' 5 'ember b'

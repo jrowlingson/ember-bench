@@ -26,14 +26,21 @@ ember-bench
 
 #### Sample Output
 
+The following is the result of running:
+
+```zsh
+% ember new test-bench && cd test-bench && yarn
+% ember bench
 ```
+
+```sh
 ======================
  ember bench (0.0.1)
 ======================
 
-git repo: my-repo
+git repo: test-bench
 git branch: master
-git commit: def58dd4
+git commit: d15dc15
 ember-cli: 3.20.0
 node: 12.18.3
 os: linux x64
@@ -44,45 +51,44 @@ mem: 16313584kB
 
 1.a: ember --version (n=5)
 
-	real	user	sys
-	⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
-	1.26	1.48	0.13
-	1.27	1.45	0.16
-	1.26	1.48	0.09
-	1.27	1.45	0.15
-	1.26	1.44	0.15
-	⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
-	1.26	1.46	.13
+        real    user    sys
+        ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
+        1.34    1.54    0.12
+        1.29    1.52    0.11
+        1.28    1.48    0.13
+        1.30    1.56    0.09
+        1.29    1.49    0.14
+        ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
+        1.30    1.51    .11
 
 2.a: ember b (n=3, before_each: rm -rf node_modules dist && yarn)
 
-	real	user	sys
-	⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
-	3.49	4.21	0.33
-	3.48	4.17	0.40
-	3.45	3.98	0.38
-	⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
-	3.47	4.12	.37
+        real    user    sys
+        ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
+        6.33    13.97   0.99
+        3.58    4.20    0.33
+        3.55    4.24    0.41
+        ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
+        4.48    7.47    .57
 
 2.b: ember b (n=5, before_all: ember b)
 
-	real	user	sys
-	⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
-	3.48	4.20	0.34
-	3.45	4.15	0.38
-	3.45	4.08	0.44
-	3.49	4.13	0.43
-	3.43	4.18	0.36
-	⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
-	3.46	4.14	.39
+        real    user    sys
+        ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
+        3.55    4.18    0.42
+        3.54    4.24    0.37
+        3.51    4.21    0.36
+        3.53    4.06    0.39
+        3.54    4.14    0.35
+        ⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻⎻
+        3.53    4.16    .37
 ```
 
 ### Options
 
-* Version info
-`--version` or `-v`
-
+* `--version|-v`: version info
+* `--npm|-n`: use `npm` (default `yarn`)
 
 ### Notes
 
-This tool currently assumes the usage of `yarn`.
+This tool currently assumes the usage of `yarn`. You may specify the `--npm` option to use `npm` instead.
