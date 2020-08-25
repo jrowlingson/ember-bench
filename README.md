@@ -10,6 +10,7 @@ You will need the following things properly installed on your computer.
 * [Yarn](https://classic.yarnpkg.com/en/) (optional if using npm)
 * [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://ember-cli.com/)
+* `zsh`
 
 ### Installation
 
