@@ -30,6 +30,10 @@ ember-bench
 ======================
  ember bench (0.0.1)
 ======================
+
+git repo: my-repo
+git branch: master
+git commit: def58dd4
 ember-cli: 3.20.0
 node: 12.18.3
 os: linux x64
