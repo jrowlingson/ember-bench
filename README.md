@@ -30,7 +30,7 @@ The following is the result of running:
 
 ```zsh
 % ember new test-bench && cd test-bench && yarn
-% ember bench
+% ember-bench
 ```
 
 ```sh
