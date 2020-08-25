@@ -1,4 +1,12 @@
 #!/bin/zsh
+
+# color output
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+NOCOLOR="\033[0m"
+
+print "${GREEN}installing ember-bench...${NOCOLOR}"
+
 repo_root=https://raw.githubusercontent.com/jrowlingson/ember-bench/master/
 
 # install ember-bench command
@@ -15,9 +23,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
   if ! type "gtime" > /dev/null; then
     print 'gtime does not exist. installing via brew'
     if ! type "brew" > /dev/null; then
-      print 'error: brew must be installed'
+      print "${RED}error: brew must be installed${NOCOLOR}"
       exit 1
     fi
     brew install gnu-time
   fi
 fi
+
+print "${GREEN}success! try running${NOCOLOR} ember-bench --version"
