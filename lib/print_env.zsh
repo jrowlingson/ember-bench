@@ -1,9 +1,9 @@
 function print_env() {
   print ""
-  ember -v | grep "cli\|os\|node"
   print "git repo: `basename $(git rev-parse --show-toplevel HEAD)`"
   print "git branch: `git rev-parse --abbrev-ref HEAD`"
   print "git commit: `git rev-parse --short HEAD`"
+  ember -v | grep "cli\|os\|node"
   if [[ "$(uname)" == "Darwin" ]]; then
     print "cpu: `sysctl -a | grep machdep.cpu.brand_string  | cut -d':' -f2`"
     print "cpu cores: `sysctl -a | grep machdep.cpu.core_count  | cut -d':' -f2`"
