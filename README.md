@@ -86,6 +86,7 @@ mem: 16313584kB
 
 ### Options
 
+* `--help|-h`: print usage info
 * `--version|-v`: version info
 * `--npm|-n`: use `npm` (default `yarn`)
 
