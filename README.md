@@ -12,13 +12,13 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](https://ember-cli.com/)
 * `zsh`
 
-### Installation
+## Installation
 
 ```sh
 /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/jrowlingson/ember-bench/master/install.sh)"
 ```
 
-### Usage
+## Usage
 
 ```sh
 cd /path/to/your/ember-cli-project
@@ -27,13 +27,13 @@ ember-bench
 
 #### Sample Output
 
-The following is the result of running:
+After running:
 
 ```zsh
 % ember new test-bench && cd test-bench && yarn
 % ember-bench
 ```
-
+The following output is produced:
 ```sh
 ======================
  ember bench (0.0.1)
@@ -95,4 +95,4 @@ mem: 16313584kB
 
 This tool currently assumes the usage of `yarn`. You may specify the `--npm` option to use `npm` instead.
 
-Supports Linux and macOS (a PR for Windows support would be welcome!).
+Supports Linux and macOS.
