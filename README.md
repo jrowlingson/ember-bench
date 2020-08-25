@@ -20,7 +20,7 @@ You will need the following things properly installed on your computer.
 ### Usage
 
 ```sh
-cd /your/project/root
+cd /path/to/your/ember-cli-project
 ember-bench
 ```
 
