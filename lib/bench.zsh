@@ -1,4 +1,8 @@
 function bench() {
+  time_cmd="/usr/bin/time"
+  if [[ "$(uname)" == "Darwin" ]]; then
+    time_cmd="/usr/local/bin/gtime"
+  fi
   n=${3:-5}
   before_all=$4
   before_each=$5
@@ -17,7 +21,7 @@ function bench() {
   for i in `seq 1 $n`;
     do
       eval $before_each &> /dev/null
-      cmd="/usr/bin/time -f '%e,%U,%S' -o ember-bench.tmp $2 &> /dev/null"
+      cmd="$time_cmd -f '%e,%U,%S' -o ember-bench.tmp $2 &> /dev/null"
       eval $cmd
       elapsed=$(cat ember-bench.tmp)
       IFS=, read -rA arr <<< "$elapsed"
