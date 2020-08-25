@@ -24,6 +24,7 @@ function bench() {
       cmd="$time_cmd -f '%e,%U,%S' -o ember-bench.tmp $2 &> /dev/null"
       eval $cmd
       elapsed=$(cat ember-bench.tmp)
+      rm ember-bench.tmp
       IFS=, read -rA arr <<< "$elapsed"
       print "\t$arr[1]\t$arr[2]\t$arr[3]"
       real_acc+=$arr[1]
